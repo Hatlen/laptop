@@ -113,7 +113,9 @@ gem_install_or_update() {
   fi
 }
 
+set +e
 xcode-select --install 2>/dev/null
+set -e
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
@@ -193,6 +195,7 @@ brew_cask_install_or_upgrade() {
   else
     echo "The $@ cask is already installed, update it in the app"
   fi
+  set -e
 )
 }
 
