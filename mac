@@ -177,11 +177,8 @@ fancy_echo "Configuring Bundler ..."
   bundle config --global jobs number_of_cores
 
 brew_install_or_upgrade 'heroku-toolbelt'
+brew_install_or_upgrade 'thoughtbot/formulae/rcm'
 
-if ! command -v rcup >/dev/null; then
-  brew_tap 'thoughtbot/formulae'
-  brew_install_or_upgrade 'rcm'
-fi
 brew_install_or_upgrade caskroom/cask/brew-cask
 brew_cask_install_or_upgrade() {
 (
