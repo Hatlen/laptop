@@ -182,6 +182,20 @@ if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
   brew_install_or_upgrade 'rcm'
 fi
+brew_install_or_upgrade caskroom/cask/brew-cask
+brew_cask_install_or_upgrade() {
+(
+  set +e
+  brew cask list "$1" &>/dev/null
+
+  if [[ $? -ne 0 ]]; then
+    echo "Installing cask $@ ..."
+    brew cask install "$@"
+  else
+    echo "The $@ cask is already installed, update it in the app"
+  fi
+)
+}
 
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
