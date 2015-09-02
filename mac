@@ -197,6 +197,16 @@ brew_cask_install_or_upgrade() {
 )
 }
 
+xcode-select --install 2>/dev/null
+
+brew_cask_install_or_upgrade 'alfred'
+brew_cask_install_or_upgrade '1password'
+brew_cask_install_or_upgrade 'dash'
+brew_cask_install_or_upgrade 'spotify'
+brew_cask_install_or_upgrade 'virtualbox'
+brew_cask_install_or_upgrade 'rowanj-gitx'
+brew_cask_install_or_upgrade 'slack'
+brew_cask_install_or_upgrade 'shiftit'
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
