@@ -204,6 +204,7 @@ brew_cask_install_or_upgrade 'virtualbox'
 brew_cask_install_or_upgrade 'rowanj-gitx'
 brew_cask_install_or_upgrade 'slack'
 brew_cask_install_or_upgrade 'shiftit'
+
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
